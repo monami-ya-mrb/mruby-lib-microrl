@@ -434,9 +434,11 @@ static int microrl_insert_text (microrl_t * pThis, char * text, int len)
 						 pThis->cmdlen - pThis->cursor);
 		for (i = 0; i < len; i++) {
 			pThis->cmdline [pThis->cursor + i] = text [i];
+#ifndef _DISABLE_TOKENIZE
 			if (pThis->cmdline [pThis->cursor + i] == ' ') {
 				pThis->cmdline [pThis->cursor + i] = 0;
 			}
+#endif
 		}
 		pThis->cursor += len;
 		pThis->cmdlen += len;

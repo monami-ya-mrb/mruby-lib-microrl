@@ -16,6 +16,10 @@ If user input chars more then it parametrs-1, chars not added to command line.*/
 #define _COMMAND_LINE_LEN (1+100)									// for 32 chars
 
 /*
+Disables tokenize commands. Without this define, all space chars are replaced to '\0'. */
+//#define _DISABLE_TOKENIZE
+
+/*
 Command token number, define max token it command line, if number of token 
 typed in command line exceed this value, then prints message about it and
 command line not to be parced and 'execute' callback will not calls.
